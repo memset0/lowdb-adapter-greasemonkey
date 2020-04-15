@@ -2,9 +2,9 @@
 
 class GreasemonkeyAsync {
 	read() {
-		return GM.getValue(this.source, undefined)
+		return GM.getValue(this.source, '')
 			.then(data => {
-				if (data == 'undefined') {
+				if (data === '') {
 					return GM.setValue(this.source, this.serialize(this.defaultValue))
 						.then(() => this.defaultValue)
 				} else {
